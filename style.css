@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#page {
+  padding: 10px;
+  font-size: 16px;
+  background: skyblue;
+}
+
+.pre {
+  display: inline-block;
+  padding: 5px;
+  background: #eee;
+}

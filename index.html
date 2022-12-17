@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>200tb without webpack</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script defer="defer" type="module" src="index.js"></script>
+</head>
+<body>
+<div id="page">
+
+  <header>
+    <strong>Серия уроков о работе с webpack</strong><br>
+    <em>Автор Иван Каширин frontend200tb</em>
+  </header>
+
+  <h1>Проект 1 Посмотрим как работают модули js без webpack</h1>
+
+  <section id="description">
+    <h2>Описание:</h2>
+    <p>1. В папке проекта лежат файлы index.html, favicon.svg, style.css, index.js
+    <br>2. Модули js (файлы a.js, b.js, sum.js) лежат в папке js
+    <br>3. В файле index.js делаем импорты из файлов a.js, b.js, sum.js (в которых делаем экспорты)
+    <br>4. В файле index.html подключены favicon.svg, style.css и index.js
+    <br>5. В следующем проекте посмотрим как работает webpack без настроек
+    <br><strong>Важно !</strong> Запускаем проект с сервера, так как локально модули не работают</p>
+  </section>
+
+  <section id="result">
+    <h2>Результат:</h2>
+  </section>
+
+  <section id="code">
+    <h2>Исходный код:</h2>
+    <p>файл index.js</p>
+    <pre class="pre">
+import {a} from './js/a.js';
+import {b} from './js/b.js';
+import {sum} from './js/sum.js';
+let result1 = sum(a,b);
+    </pre>
+    <p>файл a.js</p>  
+    <pre class="pre">
+export const a = 10;
+    </pre>
+    <p>файл b.js</p>  
+    <pre class="pre">
+export const b = 40;
+    </pre>
+    <p>файл sum.js</p>  
+    <pre class="pre">
+export function sum(...args) {
+  let result = 0;
+  for(const arg of args) {
+    result += arg;
+  }
+  return result;
+}
+    </pre>
+  </section>
+
+</div>
+</body>
+</html>
